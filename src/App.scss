@@ -1,0 +1,72 @@
+@import url("https://fonts.googleapis.com/css2?family=Inconsolata:wght@500&family=Roboto:wght@500&display=swap");
+
+$contrast: 20%;
+
+$baseColor: #1d1f21;
+$secondColor: #c5c8c6;
+$thirdColor: #373b41;
+$textColor: #282a2e;
+
+$lightBase: lighten($baseColor, $contrast);
+
+body {
+  background-image: linear-gradient(
+    to right bottom,
+    #373b41,
+    #303439,
+    #2a2d31,
+    #232629,
+    #1d1f21
+  );
+  margin: 0;
+  padding: 0;
+}
+
+.editor {
+  textarea {
+    transition: 0.2s ease-in-out;
+    outline: none;
+    padding: 1.5em;
+    border: 2px solid black;
+    border-radius: 1em;
+    background-color: $baseColor;
+
+    color: $secondColor;
+    &::-webkit-scrollbar {
+      display: none;
+    }
+    &:focus {
+      border-color: $lightBase;
+      border: 0.2em solid;
+      transition: 0.2s ease-in-out;
+      transform: translate(0, 30%) scale(1.1);
+    }
+  }
+  margin: 1.5em;
+  display: flex;
+  justify-content: center;
+}
+
+#preview {
+  font-family: "Roboto", sans-serif;
+  color: $secondColor;
+  border-radius: 1em;
+  border: 1px solid black;
+  margin: 1.5em;
+  padding: 1em;
+  h1,
+  h2 {
+    text-align: center;
+    text-transform: capitalize;
+  }
+
+  code {
+    display: inline-block;
+    color: seagreen;
+    background-color: $baseColor;
+  }
+  img {
+    display: block;
+    margin: 0 auto;
+  }
+}
